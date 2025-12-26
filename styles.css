@@ -1291,6 +1291,14 @@ select {
     hyphens: auto;
 }
 
+.features__list .feature:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
 /* ============================================
    8. SEﾃ�グ BENEFﾃ垢IOS
    Grid de vantagens
