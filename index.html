@@ -1,0 +1,644 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- ============================================
+         META TAGS E CONFIGURAÇÕES BÁSICAS
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="description"
+        content="BodyPay - Plataforma completa de pagamentos. Simplifique seus pagamentos e acelere suas vendas.">
+    <meta name="keywords" content="pagamentos, fintech, pix, cartão, boleto, gestão financeira, BodyPay">
+    <meta name="author" content="BodyPay">
+
+    <!-- Meta tags para Safari iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- ============================================
+         TÍTULO DA PÁGINA
+         ============================================ -->
+    <title>BodyPay - Plataforma Completa de Pagamentos</title>
+
+    <!-- ============================================
+         FAVICON
+         ============================================ -->
+    <link rel="icon" type="image/x-icon" href="images/logo-bodypay.png">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo-bodypay.png">
+    <link rel="apple-touch-icon" href="images/logo-bodypay.png">
+
+    <!-- ============================================
+         FONTES EXTERNAS - Google Fonts
+         ============================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- ============================================
+         ÍCONES - Phosphor Icons
+         ============================================ -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- ============================================
+         PRELOAD DE IMAGENS CRÍTICAS
+         Carrega imagens importantes primeiro
+         ============================================ -->
+    <link rel="preload" as="image" href="images/card_bodypay.png" fetchpriority="high">
+    <link rel="preload" as="image" href="images/fundo_card.png" fetchpriority="high">
+
+    <!-- ============================================
+         CSS CUSTOMIZADO
+         ============================================ -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Loading indicator -->
+    <div id="loading-bar"
+        style="position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, #6366F1, #818CF8); z-index: 99999; transition: width 0.3s ease;">
+    </div>
+
+    <!-- ============================================
+         HEADER / NAVEGAÇÃO PRINCIPAL
+         Header com logo e menu de navegação
+         ============================================ -->
+    <header class="header">
+        <nav class="nav container">
+            <!-- Logo da empresa -->
+            <div class="nav__logo">
+                <a href="#" class="logo__link">
+                    <img src="images/logo-bodypay.png" alt="BodyPay" class="logo__image">
+                    <span class="logo__text">BodyPay</span>
+                </a>
+            </div>
+
+            <!-- Menu Desktop (Visível apenas em telas grandes) -->
+            <div class="nav__menu" id="desktop-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#inicio" class="nav__link active">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#solucoes" class="nav__link">Soluções</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#funcionalidades" class="nav__link">Funcionalidades</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#financiamento" class="nav__link">Financiamento</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#beneficios" class="nav__link">Benefícios</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contato" class="nav__link">Contato</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- Botão CTA e Toggle Mobile -->
+            <div class="nav__actions">
+                <a href="https://wa.me/558582256193?text=Olá!%20Gostaria%20de%20abrir%20uma%20conta%20na%20BodyPay"
+                    target="_blank" class="button button--primary">
+                    Crie sua conta
+                    <i class="ph ph-arrow-right"></i>
+                </a>
+
+            </div>
+        </nav>
+    </header>
+
+
+
+    <!-- ============================================
+         MAIN CONTENT
+         Conteúdo principal da página
+         ============================================ -->
+    <main class="main">
+
+        <!-- ============================================
+             SEÇÃO HERO
+             Primeira seção com proposta de valor
+             ============================================ -->
+        <section class="hero section" id="inicio">
+            <div class="container hero__container">
+                <!-- Conteúdo textual -->
+                <div class="hero__content">
+                    <span class="hero__tag">Plataforma Completa de Pagamentos</span>
+
+                    <h1 class="hero__title">
+                        Simplifique seus <span class="text--primary">pagamentos</span> e acelere suas <span
+                            class="text--primary">vendas</span>
+                    </h1>
+
+                    <p class="hero__description">
+                        Aceite todos os meios de pagamento em um só lugar. Pix,
+                        cartão, boleto, financiamento e muito mais. Gestão financeira
+                        completa em tempo real para o seu negócio crescer.
+                    </p>
+
+                    <!-- Botões de ação -->
+                    <div class="hero__buttons">
+                        <a href="https://wa.me/558582256193?text=Olá!%20Gostaria%20de%20abrir%20uma%20conta%20na%20BodyPay"
+                            target="_blank" class="button button--cta">
+                            Crie sua conta
+                            <i class="ph ph-arrow-right"></i>
+                        </a>
+                        <button class="button button--ghost" id="btn-como-funciona">
+                            <i class="ph ph-play-circle"></i>
+                            Ver Como Funciona
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ilustração do hero -->
+                <div class="hero__visual">
+                    <div class="hero__card">
+                        <img src="images/card_bodypay.png" alt="Cartão BodyPay" class="card__image" loading="eager"
+                            decoding="async" width="550" height="350">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SEÇÃO SOLUÇÕES
+             Meios de pagamento oferecidos
+             ============================================ -->
+        <section class="solutions section" id="solucoes">
+            <div class="glow-blob glow-blob--2"></div>
+            <div class="container">
+                <!-- Cabeçalho -->
+                <div class="section__header">
+                    <span class="section__tag">Soluções de Pagamento</span>
+                    <h2 class="section__title">
+                        Aceite <span class="text--primary">todos os meios</span><br>
+                        de pagamento
+                    </h2>
+                </div>
+
+                <!-- Grid de soluções -->
+                <div class="solutions__grid">
+                    <!-- PIX -->
+                    <div class="solution-card">
+                        <div class="solution-card__icon solution-card__icon--pix">
+                            <i class="ph ph-qr-code"></i>
+                        </div>
+                        <h3 class="solution-card__title">Pix</h3>
+                        <p class="solution-card__description">
+                            Receba pagamentos instantâneos 24/7. Aprovação em segundos.
+                        </p>
+                    </div>
+
+                    <!-- Cartão de Crédito -->
+                    <div class="solution-card">
+                        <div class="solution-card__icon solution-card__icon--credit">
+                            <i class="ph ph-credit-card"></i>
+                        </div>
+                        <h3 class="solution-card__title">Cartão de Crédito</h3>
+                        <p class="solution-card__description">
+                            Parcele em até 12x. Aceite todas as bandeiras.
+                        </p>
+                    </div>
+
+                    <!-- Boleto -->
+                    <div class="solution-card">
+                        <div class="solution-card__icon solution-card__icon--boleto">
+                            <i class="ph ph-barcode"></i>
+                        </div>
+                        <h3 class="solution-card__title">Boleto Bancário</h3>
+                        <p class="solution-card__description">
+                            Gere boletos registrados com gestão automática.
+                        </p>
+                    </div>
+
+                    <!-- Link de Pagamento -->
+                    <div class="solution-card">
+                        <div class="solution-card__icon solution-card__icon--link">
+                            <i class="ph ph-link"></i>
+                        </div>
+                        <h3 class="solution-card__title">Link de Pagamento</h3>
+                        <p class="solution-card__description">
+                            Venda por WhatsApp, Instagram e qualquer canal.
+                        </p>
+                    </div>
+
+                    <!-- Financiamento -->
+                    <div class="solution-card">
+                        <div class="solution-card__icon solution-card__icon--financing">
+                            <i class="ph ph-hand-coins"></i>
+                        </div>
+                        <h3 class="solution-card__title">Financiamento</h3>
+                        <p class="solution-card__description">
+                            Ofereça crédito com aprovação instantânea.
+                        </p>
+                    </div>
+
+                    <!-- Débito -->
+                    <div class="solution-card">
+                        <div class="solution-card__icon solution-card__icon--debit">
+                            <i class="ph ph-money"></i>
+                        </div>
+                        <h3 class="solution-card__title">Cartão de Débito</h3>
+                        <p class="solution-card__description">
+                            Débito online com garantia de pagamento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SEÇÃO FUNCIONALIDADES
+             Principais recursos da plataforma
+             ============================================ -->
+        <section class="features section" id="funcionalidades">
+            <div class="glow-blob glow-blob--4"></div>
+            <div class="container">
+                <!-- Cabeçalho -->
+                <div class="section__header">
+                    <span class="section__tag">Funcionalidades</span>
+                    <h2 class="section__title">
+                        Tudo que você precisa para<br>
+                        <span class="text--primary">vender mais</span>
+                    </h2>
+                </div>
+
+                <!-- Lista de funcionalidades -->
+                <div class="features__list">
+                    <!-- Feature 1 -->
+                    <div class="feature">
+                        <div class="feature__icon">
+                            <i class="ph ph-chart-line"></i>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">Gestão Financeira em Tempo Real</h3>
+                            <p class="feature__description">
+                                Visualize todas as suas vendas, recebimentos e parcelas em tempo real.
+                                Dashboard completo com relatórios detalhados.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature">
+                        <div class="feature__icon">
+                            <i class="ph ph-robot"></i>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">Cobrança Automatizada</h3>
+                            <p class="feature__description">
+                                Configure regras e seus clientes recebem automaticamente mensagens
+                                via WhatsApp, e-mail e SMS.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature">
+                        <div class="feature__icon">
+                            <i class="ph ph-shield-check"></i>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">Análise de Risco de Crédito</h3>
+                            <p class="feature__description">
+                                Consulte a reputação financeira dos seus clientes.
+                                Evite inadimplência com análise integrada.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature">
+                        <div class="feature__icon">
+                            <i class="ph ph-code"></i>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">API Completa e Webhooks</h3>
+                            <p class="feature__description">
+                                Integre com seu sistema em minutos. API REST documentada
+                                e webhooks para notificações em tempo real.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SEÇÃO GESTÃO
+             Dashboard e controle financeiro
+             ============================================ -->
+        <section class="management section" id="gestao">
+            <div class="glow-blob glow-blob--1"></div>
+            <div class="glow-blob glow-blob--2"></div>
+            <div class="container">
+                <div class="management__container">
+                    <!-- Lado Esquerdo: Dashboard Visual -->
+                    <div class="management__visual">
+                        <img src="images/cell_bodypay.png" alt="Dashboard BodyPay Mobile" class="management__image"
+                            loading="lazy" decoding="async" width="350" height="700">
+                    </div>
+
+                    <!-- Lado Direito: Conteúdo -->
+                    <div class="management__content">
+                        <span class="section__tag section__tag--pink">Gestão</span>
+                        <h2 class="management__title">
+                            Toda a <span class="text--pink">praticidade</span> que seu financeiro precisava
+                        </h2>
+                        <p class="management__description">
+                            Visualize todas as vendas e acompanhe em tempo real as parcelas
+                            recebidas e previstas. Com a BodyPay, fica fácil controlar todo o dinheiro
+                            que entra e sai.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SEÇÃO FINANCIAMENTO
+             Ofereça crédito aos seus clientes
+             ============================================ -->
+        <section class="financing section" id="financiamento">
+            <div class="glow-blob glow-blob--2"></div>
+
+            <!-- Hero do Financiamento -->
+            <div class="container">
+                <div class="financing-hero">
+                    <div class="financing-hero__content">
+                        <h1 class="financing-hero__title">
+                            Ofereça crédito,<br>
+                            venda mais!<br>
+                            <span class="text--primary">Seus clientes compram em até 24x</span>
+                        </h1>
+                        <p class="financing-hero__description">
+                            Seu cliente paga aos pouquinhos e você recebe tudo de uma vez,
+                            sem risco de inadimplência
+                        </p>
+
+                        <div class="financing-hero__social">
+                            <div class="financing-hero__avatars">
+                                <img src="images/pessoas.avif" alt="Clientes satisfeitos"
+                                    style="height: 40px; border-radius: 50px;">
+                            </div>
+                            <span class="financing-hero__social-text">Milhares de aprovações</span>
+                        </div>
+
+                        <a href="https://wa.me/558582256193?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20financiamento%20na%20BodyPay"
+                            target="_blank" class="button button--primary button--lg">
+                            Quero oferecer crédito
+                            <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="financing-hero__visual">
+                        <img src="images/cell_body2.png" alt="App BodyPay - Financiamento" class="financing-hero__image"
+                            loading="lazy" decoding="async" width="400" height="800">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Por que escolher -->
+            <div class="container">
+                <h2 class="financing-why__title">Nossos parceiros de financiamento:</h2>
+
+                <div class="financing-why">
+
+
+
+
+                    <!-- Card 3: Sem risco (grande) -->
+                    <div class="financing-why__card financing-why__card--risk">
+                        <div class="financing-why__card-icons">
+                            <div class="icon-circle icon-circle--1">
+                                <i class="ph ph-shield-check"></i>
+                            </div>
+                            <div class="icon-circle icon-circle--2">
+                                <i class="ph ph-currency-dollar"></i>
+                            </div>
+                        </div>
+                        <h3 class="financing-why__card-title">Sem risco de inadimplência</h3>
+                        <p class="financing-why__card-description">
+                            Você recebe pela venda mesmo que o cliente fique inadimplente ou
+                            atrase o pagamento. O risco é 100% da instituição financeira.
+                        </p>
+                    </div>
+
+                    <!-- Card 4: Múltiplas opções -->
+                    <div class="financing-why__card financing-why__card--options">
+                        <h3 class="financing-why__card-title">Múltiplas opções de crédito</h3>
+                        <p class="financing-why__card-description">
+                            A única plataforma que oferece ofertas de crédito de diferentes
+                            instituições financeiras simultaneamente, com um único cadastro.
+                        </p>
+                        <div class="partners-carousel">
+                            <div class="partners-carousel__track">
+                                <!-- Primeiro conjunto de logos -->
+                                <div class="partners-carousel__item">
+                                    <img src="images/parceiros/parceiro 1.avif" alt="Parceiro 1">
+                                </div>
+                                <div class="partners-carousel__item">
+                                    <img src="images/parceiros/parceiro 2.avif" alt="Parceiro 2">
+                                </div>
+                                <div class="partners-carousel__item">
+                                    <img src="images/parceiros/parceiro 3.webp" alt="Parceiro 3">
+                                </div>
+                                <!-- Duplicação para loop infinito -->
+                                <div class="partners-carousel__item">
+                                    <img src="images/parceiros/parceiro 1.avif" alt="Parceiro 1">
+                                </div>
+                                <div class="partners-carousel__item">
+                                    <img src="images/parceiros/parceiro 2.avif" alt="Parceiro 2">
+                                </div>
+                                <div class="partners-carousel__item">
+                                    <img src="images/parceiros/parceiro 3.webp" alt="Parceiro 3">
+                                </div>
+                                <!-- Mais uma duplicação para suavidade -->
+                                <div class="partners-carousel__item">
+                                    <img src="images/parceiros/parceiro 1.avif" alt="Parceiro 1">
+                                </div>
+                                <div class="partners-carousel__item">
+                                    <img src="images/parceiros/parceiro 2.avif" alt="Parceiro 2">
+                                </div>
+                                <div class="partners-carousel__item">
+                                    <img src="images/parceiros/parceiro 3.webp" alt="Parceiro 3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SEÇÃO BENEFÍCIOS
+             Vantagens da plataforma
+             ============================================ -->
+        <section class="benefits section" id="beneficios">
+            <div class="glow-blob glow-blob--3"></div>
+            <div class="container">
+                <!-- Cabeçalho -->
+                <div class="section__header">
+                    <span class="section__tag">Vantagens</span>
+                    <h2 class="section__title">
+                        Por que escolher a<br>
+                        <span class="text--primary">BodyPay</span>?
+                    </h2>
+                </div>
+
+                <!-- Grid de benefícios -->
+                <div class="benefits__grid">
+                    <div class="benefit">
+                        <i class="ph ph-percent"></i>
+                        <h3>Taxas Competitivas</h3>
+                        <p>As menores taxas do mercado</p>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="ph ph-clock"></i>
+                        <h3>Recebimento Rápido</h3>
+                        <p>Receba em 1 dia útil</p>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="ph ph-device-mobile"></i>
+                        <h3>Mobile First</h3>
+                        <p>Gerencie pelo celular</p>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="ph ph-headset"></i>
+                        <h3>Suporte Humanizado</h3>
+                        <p>Atendimento rápido e eficiente</p>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="ph ph-lock"></i>
+                        <h3>Segurança Total</h3>
+                        <p>Certificação PCI DSS</p>
+                    </div>
+
+                    <div class="benefit">
+                        <i class="ph ph-rocket"></i>
+                        <h3>Sem Burocracia</h3>
+                        <p>Comece a vender hoje</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SEÇÃO CONTATO / CTA
+             Formulário e chamada final
+             ============================================ -->
+        <section class="cta section" id="contato">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 class="cta__title">
+                        Pronto para começar?
+                    </h2>
+                    <p class="cta__description">
+                        Abra sua conta gratuitamente e comece a vender em minutos.
+                    </p>
+                    <a href="https://wa.me/558582256193?text=Olá!%20Gostaria%20de%20abrir%20uma%20conta%20na%20BodyPay"
+                        target="_blank" class="button button--cta button--large">
+                        Crie sua conta
+                        <i class="ph ph-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         Rodapé com informações e links
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <!-- Coluna 1 - Logo e descrição -->
+                <div class="footer__column">
+                    <div class="footer__brand">
+                        <img src="images/logo-bodypay.png" alt="BodyPay" class="footer__logo">
+                        <span class="footer__logo-text">BodyPay</span>
+                    </div>
+                    <p class="footer__description">
+                        Plataforma completa de pagamentos para impulsionar seu negócio.
+                    </p>
+                </div>
+
+                <!-- Coluna 2 - Soluções -->
+                <div class="footer__column">
+                    <h4 class="footer__title">Soluções</h4>
+                    <ul class="footer__links">
+                        <li><a href="#solucoes">Pix</a></li>
+                        <li><a href="#solucoes">Cartão de Crédito</a></li>
+                        <li><a href="#solucoes">Boleto</a></li>
+                        <li><a href="#solucoes">Link de Pagamento</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer__bottom">
+                <p>&copy; 2026 BodyPay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         SCRIPTS
+         ============================================ -->
+    <!-- ============================================
+         MENU MOBILE (Separado do Header para Z-Index correto)
+         ============================================ -->
+    <div class="mobile-menu-container">
+        <!-- Overlay -->
+        <div class="menu-overlay" id="mobile-overlay"></div>
+
+        <!-- Menu Lateral -->
+        <div class="mobile-nav" id="mobile-menu">
+            <!-- Header do Menu Mobile -->
+            <div class="mobile-nav__header">
+                <span class="mobile-nav__logo">BodyPay</span>
+                <div class="nav__close" id="mobile-close">
+                    <i class="ph ph-x"></i>
+                </div>
+            </div>
+
+            <ul class="mobile-nav__list">
+                <li class="mobile-nav__item"><a href="#inicio" class="mobile-nav__link">Início</a></li>
+                <li class="mobile-nav__item"><a href="#solucoes" class="mobile-nav__link">Soluções</a></li>
+                <li class="mobile-nav__item"><a href="#funcionalidades" class="mobile-nav__link">Funcionalidades</a>
+                </li>
+                <li class="mobile-nav__item"><a href="#financiamento" class="mobile-nav__link">Financiamento</a></li>
+                <li class="mobile-nav__item"><a href="#beneficios" class="mobile-nav__link">Benefícios</a></li>
+                <li class="mobile-nav__item"><a href="#contato" class="mobile-nav__link">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/558582256193?text=Ol%C3%A1!%20Gostaria%20de%20abrir%20uma%20conta%20na%20BodyPay"
+        target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+        <i class="ph ph-whatsapp-logo"></i>
+    </a>
+
+</body>
+
+</html>

@@ -1,0 +1,3079 @@
+/* ============================================
+   BODYPAY - ESTILOS MODERNOS E DINﾂMICOS
+   Design moderno e clean com foco em convers縊
+   ============================================ */
+
+/* ============================================
+   1. VARIﾃ〃EIS CSS
+   Cores, fontes e valores reutilizﾃ｡veis
+   ============================================ */
+:root {
+    /* Cores Principais - Dark Theme Azul/Roxo */
+    --primary-color: #6366F1;
+    --primary-dark: #4F46E5;
+    --primary-light: #818CF8;
+
+    /* Cores Neutras - Dark Theme */
+    --white: #FFFFFF;
+    --black: #000000;
+    --gray-50: #0A0A0A;
+    --gray-100: #121212;
+    --gray-200: #1A1A1A;
+    --gray-300: #2A2A2A;
+    --gray-400: #404040;
+    --gray-500: #6B7280;
+    --gray-600: #9CA3AF;
+    --gray-700: #D1D5DB;
+    --gray-800: #E5E7EB;
+    --gray-900: #F9FAFB;
+
+    /* Cores de Status */
+    --success: #6366F1;
+    --warning: #F59E0B;
+    --error: #EF4444;
+    --info: #6366F1;
+
+    /* Tipografia */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+
+    /* Tamanhos de Fonte */
+    --text-xs: 0.75rem;
+    /* 12px */
+    --text-sm: 0.875rem;
+    /* 14px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-lg: 1.125rem;
+    /* 18px */
+    --text-xl: 1.25rem;
+    /* 20px */
+    --text-2xl: 1.5rem;
+    /* 24px */
+    --text-3xl: 1.875rem;
+    /* 30px */
+    --text-4xl: 2.25rem;
+    /* 36px */
+    --text-5xl: 3rem;
+    /* 48px */
+    --text-6xl: 3.75rem;
+    /* 60px */
+    --text-7xl: 4.5rem;
+    /* 72px */
+
+    /* Espaﾃｧamentos */
+    --space-1: 0.25rem;
+    /* 4px */
+    --space-2: 0.5rem;
+    /* 8px */
+    --space-3: 0.75rem;
+    /* 12px */
+    --space-4: 1rem;
+    /* 16px */
+    --space-5: 1.25rem;
+    /* 20px */
+    --space-6: 1.5rem;
+    /* 24px */
+    --space-8: 2rem;
+    /* 32px */
+    --space-10: 2.5rem;
+    /* 40px */
+    --space-12: 3rem;
+    /* 48px */
+    --space-16: 4rem;
+    /* 64px */
+    --space-20: 5rem;
+    /* 80px */
+    --space-24: 6rem;
+    /* 96px */
+
+    /* Bordas */
+    --radius-sm: 0.375rem;
+    /* 6px */
+    --radius-md: 0.5rem;
+    /* 8px */
+    --radius-lg: 0.75rem;
+    /* 12px */
+    --radius-xl: 1rem;
+    /* 16px */
+    --radius-2xl: 1.5rem;
+    /* 24px */
+    --radius-3xl: 2rem;
+    /* 32px */
+    --radius-full: 9999px;
+
+    /* Sombras - Dark Theme */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.8);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+    --shadow-primary: 0 0 30px rgba(99, 102, 241, 0.3);
+
+    /* Transiﾃｧﾃｵes */
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+    --transition-slow: 500ms ease;
+
+    /* Container */
+    --container-width: 1200px;
+    --header-height: 80px;
+}
+
+/* ============================================
+   2. RESET E BASE
+   Normalizaﾃｧﾃ｣o e estilos fundamentais
+   ============================================ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+    /* Previne scroll horizontal global */
+}
+
+/* Smooth scroll mais suave para todos os navegadores */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    * {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--gray-700);
+    background-color: var(--black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    /* Reforﾃｧo para prevenir scroll horizontal */
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-base);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    /* Placeholder enquanto carrega */
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.1) 0%, rgba(99, 102, 241, 0.05) 50%, rgba(99, 102, 241, 0.1) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Remove placeholder quando a imagem carregar */
+img[src]:not([src=""]) {
+    background: none;
+}
+
+/* Fix para Safari mobile - previne problemas com imagens */
+@supports (-webkit-touch-callout: none) {
+
+    /* Fix para Safari iOS */
+    html {
+        -webkit-text-size-adjust: 100%;
+        height: -webkit-fill-available;
+    }
+
+    body {
+        min-height: -webkit-fill-available;
+        position: relative;
+    }
+
+    img {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        perspective: 1000;
+    }
+
+    .card__image,
+    .management__image,
+    .financing-hero__image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+
+    /* Fix para elementos posicionados */
+    .section,
+    .container {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* ============================================
+   3. UTILITﾃヽIOS
+   Classes auxiliares
+   ============================================ */
+.container {
+    max-width: var(--container-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+.section {
+    padding: var(--space-20) 0;
+}
+
+.text--primary {
+    background: linear-gradient(90deg, #00c6ff 0%, #bd34fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* ============================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================ */
+
+/* Estado inicial - elementos invisﾃｭveis */
+.section__header,
+.solution-card,
+.feature,
+.benefit,
+.management__visual,
+.management__content,
+.financing-hero__content,
+.financing-hero__visual,
+.financing-ideal,
+.financing-why__card,
+.cta__content,
+.stat {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+/* Previne overflow durante animaﾃｧﾃｵes */
+.section {
+    overflow-x: clip;
+    overflow-y: visible;
+    contain: layout;
+}
+
+/* Garante que elementos animados nﾃ｣o causem overflow */
+.section__header,
+.solution-card,
+.feature,
+.benefit,
+.management__visual,
+.management__content,
+.financing-hero__content,
+.financing-hero__visual,
+.financing-ideal,
+.financing-why__card,
+.cta__content,
+.stat {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.hero__content,
+.hero__visual {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Estado animado - elementos visﾃｭveis */
+.hero__content.animate-in,
+.hero__visual.animate-in,
+.section__header.animate-in,
+.solution-card.animate-in,
+.feature.animate-in,
+.benefit.animate-in,
+.management__visual.animate-in,
+.management__content.animate-in,
+.financing-hero__content.animate-in,
+.financing-hero__visual.animate-in,
+.financing-ideal.animate-in,
+.financing-why__card.animate-in,
+.cta__content.animate-in,
+.stat.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animaﾃｧﾃｵes especiais para diferentes elementos com easing suave */
+.hero__content {
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero__visual {
+    transition-duration: 1.2s;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.solution-card,
+.feature,
+.benefit,
+.financing-step,
+.stat {
+    transition-duration: 0.7s;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animaﾃｧﾃ｣o de entrada lateral para elementos alternados */
+.management__visual {
+    opacity: 0;
+    transform: translateX(-50px) translateY(20px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.management__content {
+    opacity: 0;
+    transform: translateX(50px) translateY(20px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.management__visual.animate-in,
+.management__content.animate-in {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+/* Animaﾃｧﾃ｣o de scale suave para cards */
+.solution-card,
+.benefit,
+.financing-why__card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.solution-card.animate-in,
+.benefit.animate-in,
+.financing-why__card.animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ============================================
+   DESABILITAR ANIMAﾃ�髭S NO MOBILE
+   Remove todas as animaﾃｧﾃｵes de scroll em telas menores
+   ============================================ */
+@media screen and (max-width: 768px) {
+
+    /* Remove todas as transiﾃｧﾃｵes e transformaﾃｧﾃｵes */
+    .section__header,
+    .solution-card,
+    .feature,
+    .benefit,
+    .management__visual,
+    .management__content,
+    .financing-hero__content,
+    .financing-hero__visual,
+    .financing-ideal,
+    .financing-why__card,
+    .cta__content,
+    .stat,
+    .hero__content,
+    .hero__visual {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        will-change: auto !important;
+        animation: none !important;
+        transition-delay: 0s !important;
+    }
+
+    /* Garante que tudo estﾃ｡ visﾃｭvel imediatamente */
+    .section__header.animate-in,
+    .solution-card.animate-in,
+    .feature.animate-in,
+    .benefit.animate-in,
+    .management__visual.animate-in,
+    .management__content.animate-in,
+    .financing-hero__content.animate-in,
+    .financing-hero__visual.animate-in,
+    .financing-ideal.animate-in,
+    .financing-why__card.animate-in,
+    .cta__content.animate-in,
+    .stat.animate-in {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Glow Blobs - Efeitos de brilho de fundo */
+.glow-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.glow-blob--1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+    top: 10%;
+    left: 5%;
+    animation: float-blob 8s ease-in-out infinite;
+}
+
+.glow-blob--2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+    top: 50%;
+    right: 10%;
+    animation: float-blob 10s ease-in-out infinite reverse;
+}
+
+.glow-blob--3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.35) 0%, transparent 70%);
+    bottom: 20%;
+    left: 15%;
+    animation: float-blob 7s ease-in-out infinite;
+}
+
+.glow-blob--4 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+    bottom: 10%;
+    right: 5%;
+    animation: float-blob 9s ease-in-out infinite reverse;
+}
+
+@keyframes float-blob {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+
+/* Cabeﾃｧalhos de Seﾃｧﾃ｣o */
+.section__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-16);
+}
+
+.section__tag {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.section__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: var(--space-4);
+}
+
+/* Botﾃｵes */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-base);
+    font-weight: 600;
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.button--primary {
+    background: linear-gradient(90deg, #5B5FC7 0%, #6366F1 50%, #8B8FE8 100%);
+    color: var(--black);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 2rem;
+    box-shadow:
+        0 0 20px rgba(99, 102, 241, 0.4),
+        0 0 40px rgba(99, 102, 241, 0.3),
+        0 0 60px rgba(99, 102, 241, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.button--primary>* {
+    position: relative;
+    z-index: 2;
+}
+
+.button--primary::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 2rem;
+    padding: 2px;
+    background: linear-gradient(90deg, #5B5FC7, #6366F1, #8B8FE8);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.6;
+    filter: blur(8px);
+}
+
+.button--primary:hover {
+    background: linear-gradient(90deg, #4F46E5 0%, #5B5FC7 50%, #6366F1 100%);
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 30px rgba(99, 102, 241, 0.6),
+        0 0 60px rgba(99, 102, 241, 0.4),
+        0 0 90px rgba(99, 102, 241, 0.3),
+        0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.button--primary i {
+    font-size: 1rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.button--primary:hover i {
+    transform: translateX(3px);
+}
+
+.button--cta {
+    background: linear-gradient(90deg, #5B5FC7 0%, #6366F1 50%, #8B8FE8 100%);
+    color: var(--black);
+    padding: 0.875rem 1.75rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    text-transform: none;
+    letter-spacing: normal;
+    box-shadow:
+        0 0 20px rgba(99, 102, 241, 0.4),
+        0 0 40px rgba(99, 102, 241, 0.3),
+        0 0 60px rgba(99, 102, 241, 0.2),
+        0 4px 14px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.button--cta>* {
+    position: relative;
+    z-index: 2;
+}
+
+.button--cta::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 2rem;
+    padding: 2px;
+    background: linear-gradient(90deg, #5B5FC7, #6366F1, #8B8FE8);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.6;
+    filter: blur(8px);
+}
+
+.button--cta:hover {
+    background: linear-gradient(90deg, #4F46E5 0%, #5B5FC7 50%, #6366F1 100%);
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 30px rgba(99, 102, 241, 0.6),
+        0 0 60px rgba(99, 102, 241, 0.4),
+        0 0 90px rgba(99, 102, 241, 0.3),
+        0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.button--cta i {
+    font-size: 1.125rem;
+    font-weight: 700;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.button--cta:hover i {
+    transform: translateX(3px);
+}
+
+.button--ghost {
+    background: transparent;
+    color: var(--gray-600);
+    border: 2px solid var(--gray-300);
+}
+
+.button--ghost:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.button--outline {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.button--outline:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.button--large,
+.button--lg {
+    padding: 1.125rem 2.25rem;
+    font-size: 1.0625rem;
+}
+
+.button--large i,
+.button--lg i {
+    font-size: 1.25rem;
+}
+
+/* ============================================
+   4. HEADER / NAVEGAﾃ�グ
+   Barra de navegaﾃｧﾃ｣o fixa
+   ============================================ */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--space-4) 0;
+    background: transparent;
+    z-index: 1000;
+}
+
+.nav {
+    width: 95%;
+    /* Garante largura relativa */
+    max-width: 1400px;
+    margin: 0 auto;
+    /* Centraliza */
+    padding: 0 var(--space-4);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: var(--space-2) 0;
+        /* Reduz padding vertical do header */
+        display: flex;
+        justify-content: center;
+        /* Garante centralizaﾃｧﾃ｣o do filho */
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    .nav {
+        height: 60px;
+        width: 95%;
+        margin: 0 auto;
+        padding: 0 var(--space-4);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav__logo {
+        flex-shrink: 0;
+        min-width: auto;
+    }
+
+    .logo__link {
+        gap: var(--space-2);
+        /* Reduz gap entre logo e texto no mobile */
+    }
+
+    .logo__image {
+        display: none !important;
+        /* Oculta logo no mobile */
+    }
+
+    .logo__text {
+        font-size: 1.125rem;
+        white-space: nowrap;
+        line-height: 1;
+        font-weight: 700;
+    }
+
+    .nav__actions {
+        gap: var(--space-2);
+        flex-shrink: 0;
+    }
+
+    .button--primary {
+        padding: 0.5rem 1.15rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        line-height: 1;
+        font-weight: 600;
+    }
+
+    .button--primary i {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile extra pequeno - ajustes adicionais */
+@media screen and (max-width: 400px) {
+    .nav {
+        height: 48px;
+        width: 96%;
+        padding: 0 var(--space-2);
+    }
+
+    .logo__image {
+        height: 18px;
+    }
+
+    .logo__text {
+        font-size: 0.95rem;
+    }
+
+    .button--primary {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.75rem;
+    }
+
+    .button--primary i {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile muito pequeno - oculta texto da logo */
+@media screen and (max-width: 340px) {
+    .logo__text {
+        display: none;
+    }
+
+    .logo__image {
+        height: 16px;
+    }
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo__link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+}
+
+.logo__image {
+    height: 40px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    background: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.logo__text {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    /* Aumentado levemente o texto tambﾃｩm se necessﾃ｡rio, ou mantido */
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.nav__link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--gray-600);
+    position: relative;
+    padding: var(--space-2) 0;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition-base);
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+    width: 100%;
+}
+
+.nav__link.active {
+    color: var(--primary-color);
+}
+
+.nav__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.nav__toggle,
+.nav__close {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--gray-600);
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(99, 102, 241, 0.2);
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+/* Default para Desktop: Esconder o menu mobile */
+.mobile-menu-container {
+    display: none;
+}
+
+/* ============================================
+   5. SEﾃ�グ HERO
+   Primeira seﾃｧﾃ｣o da pﾃ｡gina
+   ============================================ */
+.hero {
+    padding-top: calc(var(--header-height) + var(--space-16));
+    padding-bottom: var(--space-20);
+    background-image: url('images/fundo_card.png?v=2');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    position: relative;
+    min-height: auto;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top center, rgba(99, 102, 241, 0.05) 0%, rgba(0, 0, 0, 0.5) 40%, var(--black) 80%);
+    z-index: 0;
+}
+
+.hero>* {
+    position: relative;
+    z-index: 10;
+}
+
+.hero__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+    max-width: var(--container-width);
+    position: relative;
+    z-index: 2;
+}
+
+.hero__tag {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-6);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        0 4px 16px rgba(99, 102, 241, 0.1),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.hero__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-6xl);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: var(--space-6);
+}
+
+.hero__description {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: var(--gray-600);
+    margin-bottom: var(--space-8);
+    max-width: 550px;
+}
+
+.hero__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+.hero__visual {
+    position: relative;
+}
+
+.hero__visual::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, rgba(99, 102, 241, 0.2) 30%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+.hero__card {
+    padding: var(--space-8);
+    position: relative;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.card__image {
+    width: 100%;
+    height: auto;
+    max-width: 550px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.4)) drop-shadow(0 0 60px rgba(99, 102, 241, 0.3)) drop-shadow(0 0 100px rgba(99, 102, 241, 0.2));
+    -webkit-filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.4)) drop-shadow(0 0 60px rgba(99, 102, 241, 0.3)) drop-shadow(0 0 100px rgba(99, 102, 241, 0.2));
+    animation: float 6s ease-in-out infinite;
+    -webkit-animation: float 6s ease-in-out infinite;
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+@media screen and (min-width: 1400px) {
+    .hero__container {
+        max-width: 1400px;
+        gap: var(--space-16);
+    }
+
+    .hero__title {
+        font-size: 4.5rem;
+    }
+
+    .card__image {
+        max-width: 650px;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(-3deg);
+    }
+}
+
+@-webkit-keyframes float {
+
+    0%,
+    100% {
+        -webkit-transform: translateY(0px) rotate(-5deg);
+        transform: translateY(0px) rotate(-5deg);
+    }
+
+    50% {
+        -webkit-transform: translateY(-20px) rotate(-3deg);
+        transform: translateY(-20px) rotate(-3deg);
+    }
+}
+
+/* Estatﾃｭsticas */
+.hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+    margin-top: var(--space-16);
+    padding-top: var(--space-16);
+    border-top: 1px solid var(--gray-200);
+}
+
+.stat {
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0.6) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: var(--space-8);
+    border-radius: var(--radius-2xl);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+}
+
+.stat__number {
+    font-family: var(--font-heading);
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--space-2);
+}
+
+.stat__label {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+/* ============================================
+   6. SEﾃ�グ SOLUﾃ�髭S
+   Grid de meios de pagamento
+   ============================================ */
+.solutions {
+    background: var(--black);
+}
+
+.solutions__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+}
+
+.solution-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(129, 140, 248, 0.1) 50%, rgba(0, 0, 0, 0.7) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-3xl);
+    padding: var(--space-10);
+    transition: var(--transition-base);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.solution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+}
+
+.solution-card__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+    background: var(--primary-color) !important;
+    color: var(--white) !important;
+}
+
+
+
+.solution-card__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--space-3);
+}
+
+.solution-card__description {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* ============================================
+   7. SEﾃ�グ FUNCIONALIDADES
+   Lista de features
+   ============================================ */
+.features {
+    background: var(--gray-50);
+}
+
+.features__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+}
+
+.feature {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(129, 140, 248, 0.1) 50%, rgba(0, 0, 0, 0.7) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-3xl);
+    padding: var(--space-10);
+    display: flex;
+    gap: var(--space-6);
+    transition: var(--transition-base);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature:hover {
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+    transform: translateY(-4px);
+}
+
+.feature__icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: var(--radius-md);
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.25rem;
+}
+
+.feature__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--space-2);
+}
+
+.feature__description {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* ============================================
+   8. SEﾃ�グ BENEFﾃ垢IOS
+   Grid de vantagens
+   ============================================ */
+.benefits {
+    background: var(--black);
+}
+
+.benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+}
+
+.benefit {
+    text-align: center;
+    padding: var(--space-10);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(129, 140, 248, 0.1) 50%, rgba(0, 0, 0, 0.7) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-3xl);
+    transition: var(--transition-base);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+}
+
+.benefit i {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: var(--space-4);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--space-2);
+}
+
+.benefit p {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+}
+
+/* ============================================
+   8.5. SEﾃ�グ GESTﾃグ
+   Dashboard e controle financeiro
+   ============================================ */
+.management {
+    background: var(--black);
+}
+
+.management__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+}
+
+/* Visual - Lado Esquerdo */
+.management__visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagem do Celular */
+.management__image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.3)) drop-shadow(0 0 60px rgba(99, 102, 241, 0.2));
+    -webkit-filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.3)) drop-shadow(0 0 60px rgba(99, 102, 241, 0.2));
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+/* Conteﾃｺdo - Lado Direito */
+.management__content {
+    padding-left: var(--space-8);
+}
+
+.section__tag--pink {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+}
+
+.management__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: var(--space-6);
+}
+
+.text--pink {
+    color: var(--primary-color);
+}
+
+.management__description {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: var(--gray-600);
+}
+
+
+/* ============================================
+   9. SEﾃ�グ FINANCIAMENTO
+   Ofereﾃｧa crﾃｩdito aos seus clientes
+   ============================================ */
+.financing {
+    background: var(--black);
+    position: relative;
+    overflow: hidden;
+    padding: var(--space-20) 0;
+}
+
+/* Hero do Financiamento */
+.financing-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+    margin-bottom: var(--space-20);
+}
+
+.financing-hero__content {
+    max-width: 600px;
+}
+
+.financing-hero__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: var(--space-6);
+}
+
+.financing-hero__description {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: var(--gray-600);
+    margin-bottom: var(--space-8);
+}
+
+.financing-hero__social {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.financing-hero__avatars {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border: 3px solid var(--black);
+    margin-left: -12px;
+}
+
+.avatar-circle:first-child {
+    margin-left: 0;
+}
+
+.financing-hero__social-text {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--gray-600);
+}
+
+.financing-hero__visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.financing-hero__image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.3)) drop-shadow(0 0 60px rgba(99, 102, 241, 0.2));
+    -webkit-filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.3)) drop-shadow(0 0 60px rgba(99, 102, 241, 0.2));
+    position: relative;
+    z-index: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Badges flutuantes */
+.financing-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: rgba(99, 102, 241, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-full);
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--primary-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: float-badge 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+.financing-badge i {
+    font-size: 1.2rem;
+}
+
+.financing-badge--1 {
+    top: 20%;
+    right: -25%;
+}
+
+.financing-badge--2 {
+    bottom: 25%;
+    left: -28%;
+    animation-delay: 1s;
+}
+
+@keyframes float-badge {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Seﾃｧﾃ｣o "Para quem ﾃｩ ideal" */
+.financing-ideal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+    margin-bottom: var(--space-20);
+    padding: var(--space-16) 0;
+}
+
+.financing-ideal__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+    border-radius: var(--radius-3xl);
+    padding: var(--space-12);
+}
+
+.financing-ideal__img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: var(--radius-2xl);
+    filter: drop-shadow(0 20px 40px rgba(99, 102, 241, 0.2));
+}
+
+.financing-ideal__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--white);
+    margin-bottom: var(--space-8);
+}
+
+.financing-ideal__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    margin-bottom: var(--space-8);
+}
+
+.financing-ideal__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    font-size: var(--text-lg);
+    color: var(--white);
+}
+
+.financing-ideal__item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Seﾃｧﾃ｣o "Por que escolher" */
+.financing-why__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+.financing-why {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: var(--space-6);
+}
+
+.financing-why__card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(129, 140, 248, 0.08) 50%, rgba(0, 0, 0, 0.7) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    transition: all 0.3s ease;
+}
+
+.financing-why__card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.2);
+}
+
+/* Card 1: Aprovaﾃｧﾃ｣o rﾃ｡pida */
+.financing-why__card--fast {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(129, 140, 248, 0.12) 50%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+/* Card 2: Incentivos */
+.financing-why__card--incentive {
+    grid-column: 3 / 5;
+    grid-row: 1 / 2;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(129, 140, 248, 0.15) 40%, rgba(0, 0, 0, 0.7) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card 3: Sem risco (grande) */
+.financing-why__card--risk {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(129, 140, 248, 0.18) 50%, rgba(0, 0, 0, 0.7) 100%);
+    border: 2px solid rgba(99, 102, 241, 0.4);
+}
+
+/* Card 4: Mﾃｺltiplas opﾃｧﾃｵes */
+.financing-why__card--options {
+    grid-column: 2 / 5;
+    grid-row: 2 / 3;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.18) 0%, rgba(129, 140, 248, 0.1) 50%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.financing-why__card-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--space-3);
+}
+
+.financing-why__card-description {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--gray-600);
+}
+
+/* WhatsApp Mockup & Card Images */
+.financing-why__card-image {
+    margin-top: var(--space-6);
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.financing-why__card-image img {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    filter: drop-shadow(0 10px 30px rgba(99, 102, 241, 0.2));
+}
+
+.whatsapp-mockup {
+    background: rgba(37, 211, 102, 0.05);
+    border: 1px solid rgba(37, 211, 102, 0.2);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+    max-width: 300px;
+}
+
+.whatsapp-mockup__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+}
+
+.whatsapp-mockup__header i {
+    font-size: 1.5rem;
+    color: #25D366;
+}
+
+.whatsapp-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--primary-color);
+    color: var(--black);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+
+.whatsapp-badge i {
+    font-size: 1.2rem;
+}
+
+/* Card Incentivos - ﾃ皇one */
+.financing-why__card-icon {
+    position: absolute;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    border-radius: var(--radius-full);
+    font-size: 2.5rem;
+    color: var(--black);
+    opacity: 0.2;
+}
+
+/* Card Sem Risco - ﾃ皇ones */
+.financing-why__card-icons {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.icon-circle {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    border-radius: var(--radius-full);
+    font-size: 1.5rem;
+    color: var(--black);
+}
+
+.icon-circle--2 {
+    background: rgba(99, 102, 241, 0.6);
+}
+
+/* Carrossel de Parceiros */
+.partners-carousel {
+    display: flex;
+    width: 100%;
+    height: 140px;
+    max-width: 100%;
+    place-items: center;
+    margin-top: var(--space-8);
+    padding: 20px 0;
+    list-style-type: none;
+    opacity: 1;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.partners-carousel__track {
+    display: flex;
+    gap: var(--space-10);
+    align-items: center;
+    animation: scroll-partners 20s linear infinite;
+    will-change: transform;
+}
+
+.partners-carousel__item {
+    flex-shrink: 0;
+    width: 160px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    background: rgba(99, 102, 241, 0.05);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    border-radius: var(--radius-lg);
+    transition: all 0.3s ease;
+}
+
+.partners-carousel__item:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.3);
+    transform: scale(1.05);
+}
+
+.partners-carousel__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1) opacity(0.7);
+    transition: filter 0.3s ease;
+}
+
+.partners-carousel__item:hover img {
+    filter: brightness(0) invert(1) opacity(1);
+}
+
+@keyframes scroll-partners {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.333%);
+    }
+}
+
+/* ============================================
+   10. SEﾃ�グ CTA / CONTATO
+   Chamada para aﾃｧﾃ｣o final
+   ============================================ */
+.cta {
+    background-image: url('images/fundo_card.png?v=2');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: var(--white);
+    position: relative;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.1) 0%, rgba(0, 0, 0, 0.7) 50%, var(--black) 100%);
+    z-index: 0;
+}
+
+.cta>* {
+    position: relative;
+    z-index: 1;
+}
+
+.cta__content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-5xl);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: var(--space-6);
+}
+
+.cta__description {
+    font-size: var(--text-xl);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-8);
+}
+
+
+/* ============================================
+   11. FOOTER
+   Rodapﾃｩ com links
+   ============================================ */
+.footer {
+    background: var(--gray-100);
+    color: var(--gray-400);
+    padding: var(--space-16) 0 var(--space-8);
+}
+
+.footer__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-12);
+    margin-bottom: var(--space-12);
+}
+
+.footer__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.footer__logo {
+    height: 40px;
+    width: auto;
+    margin-bottom: 0;
+}
+
+.footer__logo-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+.footer__description {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    max-width: 300px;
+    color: var(--white);
+}
+
+.footer__title {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--space-4);
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.footer__links a {
+    font-size: var(--text-sm);
+    color: var(--white);
+    transition: var(--transition-base);
+}
+
+.footer__links a:hover {
+    color: var(--primary-color);
+}
+
+.footer__bottom {
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--gray-800);
+    text-align: center;
+}
+
+.footer__bottom p {
+    font-size: var(--text-sm);
+    color: var(--white);
+}
+
+/* ============================================
+   12. RESPONSIVIDADE
+   Media queries para diferentes telas
+   ============================================ */
+
+/* Tablet (atﾃｩ 1024px) */
+@media screen and (max-width: 1024px) {
+    :root {
+        --text-6xl: 3rem;
+        --text-5xl: 2.5rem;
+        --text-4xl: 2rem;
+    }
+
+    .hero {
+        padding-top: calc(var(--header-height) + var(--space-8));
+        padding-bottom: var(--space-12);
+        min-height: auto;
+    }
+
+    .hero__container {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+
+    .hero__visual {
+        order: -1;
+    }
+
+    .hero__card {
+        min-height: 350px;
+        padding: var(--space-6);
+    }
+
+    .solutions__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features__list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer__content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Financing - Tablet */
+    .financing-hero {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+
+    .financing-hero__visual {
+        order: -1;
+        min-height: unset;
+    }
+
+    .financing-hero__image {
+        max-width: 350px;
+    }
+
+    .financing-badge--1 {
+        top: 12%;
+        right: -8%;
+    }
+
+    .financing-badge--2 {
+        bottom: 18%;
+        left: -8%;
+    }
+
+    .financing-ideal {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+
+    .financing-ideal__image {
+        order: -1;
+    }
+
+    .financing-why {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .financing-why__card--fast {
+        grid-column: 1 / 3;
+    }
+
+    .financing-why__card--incentive {
+        grid-column: 1 / 2;
+    }
+
+    .financing-why__card--risk {
+        grid-column: 2 / 3;
+    }
+
+    .financing-why__card--options {
+        grid-column: 1 / 3;
+    }
+}
+
+/* Mobile (atﾃｩ 768px) */
+@media screen and (max-width: 768px) {
+    :root {
+        --space-20: 3rem;
+        --space-16: 2rem;
+    }
+
+    /* ============================================
+       SCROLL ﾃ哢ICO - MOBILE APENAS
+       Remove qualquer scroll interno das seﾃｧﾃｵes
+       ============================================ */
+    html {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        max-width: 100vw !important;
+        width: 100% !important;
+        height: 100% !important;
+        position: relative;
+        overscroll-behavior-x: none;
+        -webkit-overflow-scrolling: touch;
+        scroll-padding-top: 80px;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        max-width: 100vw !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 100vh !important;
+        position: relative;
+        overscroll-behavior-x: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Previne overflow horizontal sem forﾃｧar max-width universal */
+    .header,
+    .nav,
+    .main,
+    .section,
+    .container,
+    .hero,
+    .solutions,
+    .features,
+    .benefits,
+    .management,
+    .financing,
+    .cta,
+    .footer {
+        overflow-x: clip;
+        overflow-y: visible;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Garante que todos os containers internos nﾃ｣o criem scroll horizontal */
+    .hero__container,
+    .solutions__container,
+    .features__container,
+    .benefits__container,
+    .management__container,
+    .financing__container,
+    .cta__container,
+    .footer__container {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .container {
+        padding: 0 var(--space-4);
+    }
+
+    .section {
+        padding: var(--space-12) 0;
+        overflow-x: clip !important;
+        overflow-y: visible !important;
+        contain: layout style;
+        isolation: isolate;
+    }
+
+    /* Previne overflow em grids e containers */
+    .hero__container,
+    .solutions__grid,
+    .features__list,
+    .benefits__grid,
+    .management__container,
+    .financing-hero,
+    .financing-why,
+    .financing-ideal,
+    .financing-steps,
+    .hero__content,
+    .hero__visual,
+    .management__content,
+    .management__visual,
+    .financing-hero__content,
+    .financing-hero__visual {
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: clip;
+        overflow-y: visible;
+    }
+
+    /* Garante que elementos animados nﾃ｣o excedam seus containers durante animaﾃｧﾃｵes */
+    .solution-card,
+    .feature,
+    .benefit,
+    .financing-why__card,
+    .stat {
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    /* Forﾃｧa dimensﾃｵes das imagens para evitar layout shift */
+    .card__image {
+        min-height: 250px;
+        width: 100% !important;
+        max-width: 300px !important;
+        object-fit: contain !important;
+    }
+
+    .management__image,
+    .financing-hero__image {
+        min-height: 200px;
+        width: 100% !important;
+        max-width: 250px !important;
+        object-fit: contain !important;
+    }
+
+    /* Sem animaﾃｧﾃｵes em mobile - elementos sempre visﾃｭveis */
+    .management__visual,
+    .management__content,
+    .section__header,
+    .solution-card,
+    .feature,
+    .benefit,
+    .financing-hero__content,
+    .financing-hero__visual,
+    .financing-ideal,
+    .financing-why__card,
+    .cta__content,
+    .stat {
+        opacity: 1 !important;
+        transform: none !important;
+        -webkit-transform: none !important;
+        transition: none !important;
+        will-change: auto !important;
+    }
+
+    /* ============================================
+       MOBILE MENU REFACTOR
+       ============================================ */
+
+    /* Esconder menu desktop no mobile */
+    #desktop-menu {
+        display: none !important;
+    }
+
+    /* Estilos do Menu Mobile (Body-level) */
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 400px;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: var(--space-8);
+        box-shadow: var(--shadow-2xl);
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 2147483647;
+        /* Max Z-Index seguro */
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
+        /* Comeﾃｧa invisﾃｭvel */
+    }
+
+    .mobile-nav.show {
+        right: 0;
+        visibility: visible;
+    }
+
+    .mobile-nav__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--space-8);
+        padding-bottom: var(--space-4);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-nav__logo {
+        color: var(--white);
+        font-weight: 700;
+        font-size: 1.25rem;
+    }
+
+    .mobile-nav__list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        width: 100%;
+    }
+
+    .mobile-nav__link {
+        color: #FFFFFF !important;
+        font-size: 1.25rem;
+        /* Tamanho legﾃｭvel */
+        font-weight: 500;
+        display: block;
+        padding: var(--space-3) 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Overlay Body-level */
+    #mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease;
+        z-index: 2147483646;
+        /* Logo abaixo do menu */
+        backdrop-filter: blur(4px);
+    }
+
+    #mobile-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Botﾃｵes dentro do mobile menu */
+    #mobile-close {
+        color: var(--white);
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav__toggle {
+        display: block;
+        color: var(--white);
+        font-size: 1.5rem;
+        z-index: 1000;
+        /* Alto, mas menor que o overlay/menu */
+        cursor: pointer;
+    }
+
+
+    .hero {
+        padding-top: calc(var(--header-height) + var(--space-6));
+        padding-bottom: var(--space-10);
+        min-height: unset;
+        max-height: none;
+    }
+
+    /* Ajusta pseudo-elemento para nﾃ｣o causar overflow */
+    .hero__visual::before {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Exceﾃｧﾃｵes: apenas html e menu podem ter scroll vertical */
+    html {
+        overflow-y: scroll !important;
+    }
+
+    body {
+        overflow-y: visible !important;
+    }
+
+    .nav__menu {
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .hero__title {
+        font-size: var(--text-4xl);
+    }
+
+    .hero__card {
+        min-height: unset;
+        padding: var(--space-4);
+    }
+
+    .hero__stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .solutions__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__brand {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer__logo {
+        display: none !important;
+        /* Oculta logo no footer mobile */
+    }
+
+    .footer__logo-text {
+        font-size: 1.35rem;
+        font-weight: 700;
+    }
+
+    .footer__description {
+        text-align: center;
+        max-width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .management__container {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+
+    .management__content {
+        padding-left: 0;
+    }
+
+    .management__timeline::before {
+        left: 25px;
+    }
+
+    /* Financing - Mobile */
+    .financing {
+        padding: var(--space-16) 0;
+    }
+
+    .financing-hero__title {
+        font-size: var(--text-4xl);
+    }
+
+    /* Regras de seguranﾃｧa para evitar cortes em tablets */
+    .financing-why__card {
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .financing-why__card-description {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .financing-hero__image {
+        max-width: 300px;
+    }
+
+    .financing-badge {
+        display: none;
+    }
+
+    .financing-ideal__title {
+        font-size: var(--text-3xl);
+    }
+
+    .financing-why {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .financing-why__card {
+        width: 100%;
+        min-width: 0;
+        /* Previne overflow em grid/flex */
+        box-sizing: border-box;
+        padding: var(--space-6);
+        overflow: hidden;
+        /* Garante que nada vaze do card */
+    }
+
+    .financing-why__card-description {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        white-space: normal;
+    }
+
+    .partners-carousel {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .financing-why__card--fast,
+    .financing-why__card--incentive,
+    .financing-why__card--risk,
+    .financing-why__card--options {
+        grid-column: 1 / -1;
+        /* Ocupa toda a largura disponﾃｭvel */
+        grid-row: auto;
+    }
+
+
+    .financing-why__card-title {
+        font-size: var(--text-xl);
+    }
+
+    .financing-why__title {
+        font-size: var(--text-3xl);
+        padding: 0 var(--space-4);
+    }
+
+    .financing {
+        overflow-x: hidden;
+    }
+
+    /* Carrossel Parceiros - Mobile */
+    .partners-carousel {
+        height: 110px;
+        padding: 15px 0;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .partners-carousel__item {
+        width: 130px;
+        height: 65px;
+        background: rgba(99, 102, 241, 0.08) !important;
+        border: 1px solid rgba(99, 102, 241, 0.15) !important;
+    }
+
+    .partners-carousel__item img {
+        filter: brightness(0) invert(1) opacity(0.8) !important;
+        -webkit-filter: brightness(0) invert(1) opacity(0.8) !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    .partners-carousel__track {
+        gap: var(--space-8);
+        animation: scroll-partners 15s linear infinite;
+        -webkit-animation: scroll-partners 15s linear infinite;
+    }
+}
+
+/* Mobile pequeno (atﾃｩ 480px) */
+@media screen and (max-width: 480px) {
+    :root {
+        --text-6xl: 2.5rem;
+        --text-5xl: 2rem;
+        --text-4xl: 1.75rem;
+    }
+
+    .hero__buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .card__image {
+        width: 95%;
+        max-width: 300px;
+    }
+
+    .hero {
+        padding-top: calc(var(--header-height) + var(--space-4));
+        padding-bottom: var(--space-8);
+    }
+
+    .hero__card {
+        min-height: 250px;
+        padding: var(--space-4);
+    }
+
+    /* Financing - Mobile Small */
+    .financing-hero__title {
+        font-size: var(--text-3xl);
+    }
+
+    .financing-hero__image {
+        max-width: 250px;
+    }
+
+    .financing-hero__visual {
+        min-height: 350px;
+    }
+
+    .financing-ideal__title {
+        font-size: var(--text-2xl);
+    }
+
+    .financing-ideal__item {
+        font-size: var(--text-base);
+    }
+
+    .financing-why__title {
+        font-size: var(--text-2xl);
+        padding: 0 var(--space-3);
+    }
+
+    .financing-why {
+        gap: var(--space-3);
+    }
+
+    .financing-why__card {
+        padding: var(--space-4);
+    }
+
+    .financing-why__card-title {
+        font-size: var(--text-lg);
+    }
+
+    .financing-why__card-description {
+        font-size: var(--text-sm);
+    }
+
+    .financing-why__card-description {
+        font-size: 0.875rem;
+        /* 14px */
+        word-wrap: break-word;
+        /* Garante quebra de linha */
+    }
+
+    .button--lg {
+        padding: var(--space-4) var(--space-6);
+        font-size: var(--text-base);
+        width: 100%;
+        /* Botﾃ｣o largura total */
+        justify-content: center;
+    }
+
+    /* Carrossel Parceiros - Mobile Small */
+    .partners-carousel {
+        height: 100px;
+        padding: 10px 0;
+    }
+
+    .partners-carousel__item {
+        width: 120px;
+        height: 60px;
+        background: rgba(99, 102, 241, 0.08) !important;
+        border: 1px solid rgba(99, 102, 241, 0.15) !important;
+    }
+
+    .partners-carousel__item img {
+        filter: brightness(0) invert(1) opacity(0.8) !important;
+        -webkit-filter: brightness(0) invert(1) opacity(0.8) !important;
+    }
+
+    .partners-carousel__track {
+        gap: var(--space-6);
+    }
+}
+
+/* Ajuste Fino para Telas Muito Pequenas (iPhone SE - 375px) */
+@media screen and (max-width: 400px) {
+    .container {
+        padding: 0 var(--space-4);
+        /* Reduz padding lateral do container */
+    }
+
+    .financing-why__card {
+        padding: var(--space-4);
+        /* 16px */
+        min-width: 0;
+        /* Importante para Grid/Flex nﾃ｣o estourar */
+        width: 100%;
+    }
+
+    .financing-why__title {
+        font-size: 1.5rem;
+        /* 24px */
+        padding: 0;
+        word-wrap: break-word;
+    }
+
+    .financing-why__card-title {
+        font-size: 1.125rem;
+        /* 18px */
+        white-space: normal;
+        /* Garante quebra de linha */
+    }
+
+    .financing-why__card-description {
+        font-size: 0.8125rem;
+        /* 13px */
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+}
+
+/* ============================================
+   FIXES ESPECﾃ孝ICOS PARA SAFARI iOS
+   Otimizaﾃｧﾃｵes para renderizaﾃｧﾃ｣o de imagens
+   ============================================ */
+@media screen and (max-width: 768px) {
+
+    /* Desabilita filtros pesados no mobile para melhor performance */
+    .card__image,
+    .management__image,
+    .financing-hero__image {
+        filter: none !important;
+        -webkit-filter: none !important;
+        animation: none !important;
+        -webkit-animation: none !important;
+        transform: none !important;
+        -webkit-transform: none !important;
+    }
+
+    /* Remove efeitos de blur pesados */
+    .glow-blob {
+        display: none !important;
+    }
+
+    .hero::before,
+    .cta::before {
+        filter: none;
+        -webkit-filter: none;
+    }
+
+    /* Simplifica backdrop-filter que ﾃｩ pesado */
+    .nav,
+    .section__tag,
+    .hero__tag,
+    .solution-card,
+    .feature,
+    .benefit,
+    .financing-badge,
+    .stat {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    /* Safari iOS - Force hardware acceleration */
+    @supports (-webkit-touch-callout: none) {
+
+        .hero__visual,
+        .management__visual,
+        .financing-hero__visual {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .hero__card {
+            -webkit-perspective: 1000px;
+            perspective: 1000px;
+        }
+
+        .card__image,
+        .management__image,
+        .financing-hero__image {
+            /* Forﾃｧa renderizaﾃｧﾃ｣o via GPU */
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            /* Remove blur que pode causar problemas */
+            -webkit-font-smoothing: antialiased;
+            /* Garante que a imagem seja renderizada */
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+    }
+
+    /* Remove background-attachment que causa problemas no Safari iOS */
+    .hero,
+    .cta {
+        background-attachment: scroll !important;
+        background-image: none !important;
+        background-color: var(--black) !important;
+    }
+
+    /* FORﾃ② remoﾃｧﾃ｣o de scroll horizontal - Safari iOS */
+    body,
+    html,
+    .header,
+    .nav,
+    .main,
+    .section,
+    .container {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        position: relative;
+    }
+
+    /* Fix adicional para Safari iOS */
+    * {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+    }
+
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Fix para logo no Safari iOS */
+    .logo__image {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .nav__logo {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    /* Fix para botﾃ｣o toggle */
+    .nav__toggle,
+    .nav__close {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        cursor: pointer !important;
+        pointer-events: auto !important;
+    }
+
+    /* Garante que menu mobile funcione */
+    .nav__menu {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    /* Previne overflow em cards e elementos */
+    .solution-card,
+    .feature,
+    .benefit,
+    .financing-why__card,
+    .management__container,
+    .financing-hero,
+    .hero__container {
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    /* Fix para imagens que podem causar overflow */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Fix para navegaﾃｧﾃ｣o */
+    .nav {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    /* Desativa animaﾃｧﾃｵes pesadas no Safari iOS para melhor performance */
+    .glow-blob {
+        display: none !important;
+    }
+
+    /* Remove transformaﾃｧﾃｵes complexas */
+    .hero::before,
+    .cta::before {
+        transform: none !important;
+        -webkit-transform: none !important;
+    }
+
+    /* Forﾃｧa z-index correto para prevenir sobreposiﾃｧﾃｵes */
+    .header {
+        z-index: 10000 !important;
+    }
+
+    .nav__menu {
+        z-index: 999999 !important;
+    }
+
+    /* Fix para logos dos parceiros no Safari iOS */
+    .partners-carousel__item {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+
+    .partners-carousel__item img {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+
+    .partners-carousel__track {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+/* ============================================
+   FLOATING WHATSAPP BUTTON
+   ============================================ */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    animation: pulse-green 2s infinite;
+}
+
+.whatsapp-float i {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128C7E;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* ============================================
+   DOTTECH BRANDING (RESTORED)
+   Seﾃｧﾃ｣o de branding da DotTech no rodapﾃｩ
+   ============================================ */
+.linkbio-dottech {
+    margin-top: var(--space-8);
+    padding: var(--space-4) var(--space-6);
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dottech-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.dottech-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.dottech-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+.dottech-label {
+    font-size: 0.75rem;
+    color: #4B5563;
+    font-weight: 500;
+}
+
+.dottech-name {
+    font-size: var(--text-base);
+    color: #111827;
+    font-weight: 700;
+}
+
+.dottech-cta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+.dottech-question {
+    font-size: var(--text-sm);
+    color: #4B5563;
+    font-weight: 500;
+}
+
+.dottech-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    background: #111827;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: var(--text-sm);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--transition-base);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dottech-button:hover {
+    transform: translateY(-2px);
+    background: #1F2937;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Tablet e Desktop */
+@media screen and (min-width: 769px) {
+    .linkbio-dottech {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: var(--space-4) var(--space-8);
+    }
+
+    .dottech-cta {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-3);
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .linkbio-dottech {
+        padding: var(--space-3) var(--space-4);
+        gap: var(--space-3);
+    }
+
+    .dottech-logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .dottech-name {
+        font-size: var(--text-sm);
+    }
+
+    .dottech-question {
+        font-size: 0.8125rem;
+    }
+
+    .dottech-button {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.8125rem;
+    }
+}
