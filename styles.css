@@ -781,7 +781,7 @@ select {
 
     .logo__image {
         display: block !important;
-        height: 65px !important;
+        height: 90px !important;
         /* Logo visível no mobile */
     }
 
@@ -824,7 +824,7 @@ select {
     }
 
     .logo__image {
-        height: 55px !important;
+        height: 80px !important;
     }
 
     .logo__text {
@@ -848,7 +848,7 @@ select {
     }
 
     .logo__image {
-        height: 50px !important;
+        height: 70px !important;
     }
 }
 
@@ -865,7 +865,7 @@ select {
 }
 
 .logo__image {
-    height: 80px !important;
+    height: 110px !important;
     width: auto;
     display: block;
     object-fit: contain;
@@ -1952,11 +1952,11 @@ select {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    margin-bottom: var(--space-4);
+    margin-bottom: -30px;
 }
 
 .footer__logo {
-    height: 40px;
+    height: 150px;
     width: auto;
     margin-bottom: 0;
 }
@@ -2586,8 +2586,9 @@ select {
     }
 
     .footer__logo {
-        display: none !important;
-        /* Oculta logo no footer mobile */
+        display: block !important;
+        height: 120px !important;
+        margin: 0 auto;
     }
 
     .footer__logo-text {
