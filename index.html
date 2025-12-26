@@ -92,7 +92,7 @@
                         <a href="#funcionalidades" class="nav__link">Funcionalidades</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#financiamento" class="nav__link">Financiamento</a>
+                        <a href="#parceiros" class="nav__link">Parceiros</a>
                     </li>
                     <li class="nav__item">
                         <a href="#beneficios" class="nav__link">Benefícios</a>
@@ -112,6 +112,10 @@
                     <i class="ph ph-arrow-right"></i>
                 </a>
 
+                <!-- Botão para abrir menu mobile -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ph ph-list"></i>
+                </div>
             </div>
         </nav>
     </header>
@@ -132,7 +136,7 @@
             <div class="container hero__container">
                 <!-- Conteúdo textual -->
                 <div class="hero__content">
-                    <span class="hero__tag">Plataforma Completa de Pagamentos</span>
+                    <img src="images/logo-bodypay.png" alt="BodyPay Logo" style="height: 120px; width: auto; margin-bottom: 1rem;">
 
                     <h1 class="hero__title">
                         Simplifique seus <span class="text--primary">pagamentos</span> e acelere suas <span
@@ -141,7 +145,7 @@
 
                     <p class="hero__description">
                         Aceite todos os meios de pagamento em um só lugar. Pix,
-                        cartão, boleto, financiamento e muito mais. Gestão financeira
+                        cartão, boleto e muito mais. Gestão financeira
                         completa em tempo real para o seu negócio crescer.
                     </p>
 
@@ -186,7 +190,7 @@
                 </div>
 
                 <!-- Grid de soluções -->
-                <div class="solutions__grid">
+                <div class="solutions__grid" data-carousel="infinite">
                     <!-- PIX -->
                     <div class="solution-card">
                         <div class="solution-card__icon solution-card__icon--pix">
@@ -205,7 +209,7 @@
                         </div>
                         <h3 class="solution-card__title">Cartão de Crédito</h3>
                         <p class="solution-card__description">
-                            Parcele em até 12x. Aceite todas as bandeiras.
+                            Parcele em até 21x. Aceite todas as bandeiras.
                         </p>
                     </div>
 
@@ -231,25 +235,56 @@
                         </p>
                     </div>
 
-                    <!-- Financiamento -->
-                    <div class="solution-card">
-                        <div class="solution-card__icon solution-card__icon--financing">
-                            <i class="ph ph-hand-coins"></i>
-                        </div>
-                        <h3 class="solution-card__title">Financiamento</h3>
-                        <p class="solution-card__description">
-                            Ofereça crédito com aprovação instantânea.
-                        </p>
-                    </div>
-
                     <!-- Débito -->
                     <div class="solution-card">
                         <div class="solution-card__icon solution-card__icon--debit">
-                            <i class="ph ph-money"></i>
+                              <i class="ph ph-money"></i>
                         </div>
                         <h3 class="solution-card__title">Cartão de Débito</h3>
                         <p class="solution-card__description">
                             Débito online com garantia de pagamento.
+                        </p>
+                    </div>
+
+                    <!-- Parcelamento -->
+                    <div class="solution-card">
+                        <div class="solution-card__icon solution-card__icon--installment">
+                            <i class="ph ph-calendar-check"></i>
+                        </div>
+                        <h3 class="solution-card__title">Parcelamento em 21x</h3>
+                        <p class="solution-card__description">
+                            Ofereça mais opções de pagamento aos seus clientes.
+                        </p>
+                    </div>
+
+                    <!-- Duplicação para loop infinito -->
+                    <div class="solution-card" aria-hidden="true">
+                        <div class="solution-card__icon solution-card__icon--pix">
+                            <i class="ph ph-qr-code"></i>
+                        </div>
+                        <h3 class="solution-card__title">Pix</h3>
+                        <p class="solution-card__description">
+                            Receba pagamentos instantâneos 24/7. Aprovação em segundos.
+                        </p>
+                    </div>
+
+                    <div class="solution-card" aria-hidden="true">
+                        <div class="solution-card__icon solution-card__icon--credit">
+                            <i class="ph ph-credit-card"></i>
+                        </div>
+                        <h3 class="solution-card__title">Cartão de Crédito</h3>
+                        <p class="solution-card__description">
+                            Parcele em até 21x. Aceite todas as bandeiras.
+                        </p>
+                    </div>
+
+                    <div class="solution-card" aria-hidden="true">
+                        <div class="solution-card__icon solution-card__icon--boleto">
+                            <i class="ph ph-barcode"></i>
+                        </div>
+                        <h3 class="solution-card__title">Boleto Bancário</h3>
+                        <p class="solution-card__description">
+                            Gere boletos registrados com gestão automática.
                         </p>
                     </div>
                 </div>
@@ -273,7 +308,7 @@
                 </div>
 
                 <!-- Lista de funcionalidades -->
-                <div class="features__list">
+                <div class="features__list" data-carousel="infinite">
                     <!-- Feature 1 -->
                     <div class="feature">
                         <div class="feature__icon">
@@ -329,6 +364,33 @@
                             </p>
                         </div>
                     </div>
+
+                    <!-- Duplicação para loop infinito -->
+                    <div class="feature" aria-hidden="true">
+                        <div class="feature__icon">
+                            <i class="ph ph-chart-line"></i>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">Gestão Financeira em Tempo Real</h3>
+                            <p class="feature__description">
+                                Visualize todas as suas vendas, recebimentos e parcelas em tempo real.
+                                Dashboard completo com relatórios detalhados.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature" aria-hidden="true">
+                        <div class="feature__icon">
+                            <i class="ph ph-robot"></i>
+                        </div>
+                        <div class="feature__content">
+                            <h3 class="feature__title">Cobrança Automatizada</h3>
+                            <p class="feature__description">
+                                Configure regras e seus clientes recebem automaticamente mensagens
+                                via WhatsApp, e-mail e SMS.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -365,114 +427,49 @@
         </section>
 
         <!-- ============================================
-             SEÇÃO FINANCIAMENTO
-             Ofereça crédito aos seus clientes
+             SEÇÃO PARCEIROS
+             Parceiros de pagamento
              ============================================ -->
-        <section class="financing section" id="financiamento">
-            <div class="glow-blob glow-blob--2"></div>
-
-            <!-- Hero do Financiamento -->
+        <section class="partners section" id="parceiros">
             <div class="container">
-                <div class="financing-hero">
-                    <div class="financing-hero__content">
-                        <h1 class="financing-hero__title">
-                            Ofereça crédito,<br>
-                            venda mais!<br>
-                            <span class="text--primary">Seus clientes compram em até 24x</span>
-                        </h1>
-                        <p class="financing-hero__description">
-                            Seu cliente paga aos pouquinhos e você recebe tudo de uma vez,
-                            sem risco de inadimplência
-                        </p>
-
-                        <div class="financing-hero__social">
-                            <div class="financing-hero__avatars">
-                                <img src="images/pessoas.avif" alt="Clientes satisfeitos"
-                                    style="height: 40px; border-radius: 50px;">
-                            </div>
-                            <span class="financing-hero__social-text">Milhares de aprovações</span>
-                        </div>
-
-                        <a href="https://wa.me/558582256193?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20financiamento%20na%20BodyPay"
-                            target="_blank" class="button button--primary button--lg">
-                            Quero oferecer crédito
-                            <i class="ph ph-arrow-right"></i>
-                        </a>
-                    </div>
-
-                    <div class="financing-hero__visual">
-                        <img src="images/cell_body2.png" alt="App BodyPay - Financiamento" class="financing-hero__image"
-                            loading="lazy" decoding="async" width="400" height="800">
-                    </div>
+                <div class="section__header">
+                    <span class="section__tag">Parceiros</span>
+                    <h2 class="section__title">
+                        Nossos <span class="text--primary">parceiros</span>
+                    </h2>
                 </div>
-            </div>
 
-            <!-- Por que escolher -->
-            <div class="container">
-                <h2 class="financing-why__title">Nossos parceiros de financiamento:</h2>
-
-                <div class="financing-why">
-
-
-
-
-                    <!-- Card 3: Sem risco (grande) -->
-                    <div class="financing-why__card financing-why__card--risk">
-                        <div class="financing-why__card-icons">
-                            <div class="icon-circle icon-circle--1">
-                                <i class="ph ph-shield-check"></i>
-                            </div>
-                            <div class="icon-circle icon-circle--2">
-                                <i class="ph ph-currency-dollar"></i>
-                            </div>
+                <div class="partners-carousel">
+                    <div class="partners-carousel__track">
+                        <!-- Primeiro conjunto de logos -->
+                        <div class="partners-carousel__item">
+                            <img src="images/parceiros/parceiro 1.avif" alt="Parceiro 1">
                         </div>
-                        <h3 class="financing-why__card-title">Sem risco de inadimplência</h3>
-                        <p class="financing-why__card-description">
-                            Você recebe pela venda mesmo que o cliente fique inadimplente ou
-                            atrase o pagamento. O risco é 100% da instituição financeira.
-                        </p>
-                    </div>
-
-                    <!-- Card 4: Múltiplas opções -->
-                    <div class="financing-why__card financing-why__card--options">
-                        <h3 class="financing-why__card-title">Múltiplas opções de crédito</h3>
-                        <p class="financing-why__card-description">
-                            A única plataforma que oferece ofertas de crédito de diferentes
-                            instituições financeiras simultaneamente, com um único cadastro.
-                        </p>
-                        <div class="partners-carousel">
-                            <div class="partners-carousel__track">
-                                <!-- Primeiro conjunto de logos -->
-                                <div class="partners-carousel__item">
-                                    <img src="images/parceiros/parceiro 1.avif" alt="Parceiro 1">
-                                </div>
-                                <div class="partners-carousel__item">
-                                    <img src="images/parceiros/parceiro 2.avif" alt="Parceiro 2">
-                                </div>
-                                <div class="partners-carousel__item">
-                                    <img src="images/parceiros/parceiro 3.webp" alt="Parceiro 3">
-                                </div>
-                                <!-- Duplicação para loop infinito -->
-                                <div class="partners-carousel__item">
-                                    <img src="images/parceiros/parceiro 1.avif" alt="Parceiro 1">
-                                </div>
-                                <div class="partners-carousel__item">
-                                    <img src="images/parceiros/parceiro 2.avif" alt="Parceiro 2">
-                                </div>
-                                <div class="partners-carousel__item">
-                                    <img src="images/parceiros/parceiro 3.webp" alt="Parceiro 3">
-                                </div>
-                                <!-- Mais uma duplicação para suavidade -->
-                                <div class="partners-carousel__item">
-                                    <img src="images/parceiros/parceiro 1.avif" alt="Parceiro 1">
-                                </div>
-                                <div class="partners-carousel__item">
-                                    <img src="images/parceiros/parceiro 2.avif" alt="Parceiro 2">
-                                </div>
-                                <div class="partners-carousel__item">
-                                    <img src="images/parceiros/parceiro 3.webp" alt="Parceiro 3">
-                                </div>
-                            </div>
+                        <div class="partners-carousel__item">
+                            <img src="images/parceiros/parceiro 2.avif" alt="Parceiro 2">
+                        </div>
+                        <div class="partners-carousel__item">
+                            <img src="images/parceiros/parceiro 3.webp" alt="Parceiro 3">
+                        </div>
+                        <!-- Duplicação para loop infinito -->
+                        <div class="partners-carousel__item">
+                            <img src="images/parceiros/parceiro 1.avif" alt="Parceiro 1">
+                        </div>
+                        <div class="partners-carousel__item">
+                            <img src="images/parceiros/parceiro 2.avif" alt="Parceiro 2">
+                        </div>
+                        <div class="partners-carousel__item">
+                            <img src="images/parceiros/parceiro 3.webp" alt="Parceiro 3">
+                        </div>
+                        <!-- Mais uma duplicação para suavidade -->
+                        <div class="partners-carousel__item">
+                            <img src="images/parceiros/parceiro 1.avif" alt="Parceiro 1">
+                        </div>
+                        <div class="partners-carousel__item">
+                            <img src="images/parceiros/parceiro 2.avif" alt="Parceiro 2">
+                        </div>
+                        <div class="partners-carousel__item">
+                            <img src="images/parceiros/parceiro 3.webp" alt="Parceiro 3">
                         </div>
                     </div>
                 </div>
@@ -496,7 +493,7 @@
                 </div>
 
                 <!-- Grid de benefícios -->
-                <div class="benefits__grid">
+                <div class="benefits__grid" data-carousel="infinite">
                     <div class="benefit">
                         <i class="ph ph-percent"></i>
                         <h3>Taxas Competitivas</h3>
@@ -532,6 +529,25 @@
                         <h3>Sem Burocracia</h3>
                         <p>Comece a vender hoje</p>
                     </div>
+
+                    <!-- Duplicação para loop infinito -->
+                    <div class="benefit" aria-hidden="true">
+                        <i class="ph ph-percent"></i>
+                        <h3>Taxas Competitivas</h3>
+                        <p>As menores taxas do mercado</p>
+                    </div>
+
+                    <div class="benefit" aria-hidden="true">
+                        <i class="ph ph-clock"></i>
+                        <h3>Recebimento Rápido</h3>
+                        <p>Receba em 1 dia útil</p>
+                    </div>
+
+                    <div class="benefit" aria-hidden="true">
+                        <i class="ph ph-device-mobile"></i>
+                        <h3>Mobile First</h3>
+                        <p>Gerencie pelo celular</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -543,6 +559,7 @@
         <section class="cta section" id="contato">
             <div class="container">
                 <div class="cta__content">
+                    <img src="images/logo-bodypay.png" alt="BodyPay Logo" class="cta__logo">
                     <h2 class="cta__title">
                         Pronto para começar?
                     </h2>
@@ -624,7 +641,7 @@
                 <li class="mobile-nav__item"><a href="#solucoes" class="mobile-nav__link">Soluções</a></li>
                 <li class="mobile-nav__item"><a href="#funcionalidades" class="mobile-nav__link">Funcionalidades</a>
                 </li>
-                <li class="mobile-nav__item"><a href="#financiamento" class="mobile-nav__link">Financiamento</a></li>
+                <li class="mobile-nav__item"><a href="#parceiros" class="mobile-nav__link">Parceiros</a></li>
                 <li class="mobile-nav__item"><a href="#beneficios" class="mobile-nav__link">Benefícios</a></li>
                 <li class="mobile-nav__item"><a href="#contato" class="mobile-nav__link">Contato</a></li>
             </ul>

@@ -408,6 +408,72 @@ document.addEventListener('DOMContentLoaded', function () {
     fixSafariIOS();
 
     /* ============================================
+       CARROSSEL INFINITO
+       Implementa scroll infinito nos carrosséis mobile
+       ============================================ */
+    function setupInfiniteCarousel() {
+        const carousels = document.querySelectorAll('[data-carousel="infinite"]');
+
+        carousels.forEach(carousel => {
+            let isScrolling;
+            let scrollDirection = null;
+            let lastScrollLeft = 0;
+
+            carousel.addEventListener('scroll', function() {
+                const currentScrollLeft = this.scrollLeft;
+                const maxScroll = this.scrollWidth - this.clientWidth;
+                const cards = Array.from(this.children).filter(child => !child.hasAttribute('aria-hidden'));
+                const cardWidth = cards[0]?.offsetWidth || 0;
+                const gap = parseInt(window.getComputedStyle(this).gap) || 0;
+                const totalCardWidth = cardWidth + gap;
+
+                // Detecta direção do scroll
+                if (currentScrollLeft > lastScrollLeft) {
+                    scrollDirection = 'right';
+                } else if (currentScrollLeft < lastScrollLeft) {
+                    scrollDirection = 'left';
+                }
+                lastScrollLeft = currentScrollLeft;
+
+                // Limpa timeout anterior
+                clearTimeout(isScrolling);
+
+                // Define novo timeout para detectar fim do scroll
+                isScrolling = setTimeout(() => {
+                    // Scrollando para a direita - chegou no final
+                    if (scrollDirection === 'right' && currentScrollLeft >= maxScroll - 50) {
+                        // Volta para o início (considerando os cards duplicados)
+                        this.scrollTo({
+                            left: totalCardWidth * 3,
+                            behavior: 'auto'
+                        });
+                    }
+                    // Scrollando para a esquerda - chegou no início
+                    else if (scrollDirection === 'left' && currentScrollLeft <= 50) {
+                        // Vai para o final (antes dos cards duplicados)
+                        this.scrollTo({
+                            left: maxScroll - (totalCardWidth * 3),
+                            behavior: 'auto'
+                        });
+                    }
+                }, 50);
+            });
+        });
+    }
+
+    // Apenas ativa em mobile
+    if (window.innerWidth <= 1024) {
+        setupInfiniteCarousel();
+    }
+
+    // Reativa ao redimensionar para mobile
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 1024) {
+            setupInfiniteCarousel();
+        }
+    });
+
+    /* ============================================
        CONSOLE LOG
        Easter egg para desenvolvedores
        ============================================ */
